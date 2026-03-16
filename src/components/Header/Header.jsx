@@ -30,7 +30,7 @@ const Header = () => {
   );
   return (
     <header className="bg-[#ffffff] sticky top-0 z-50 shadow-md">
-      <div className="navbar max-w-7xl mx-auto ">
+      <div className="navbar max-w-7xl mx-auto">
         <div className="navbar-start mx-4 lg:mx-0">
           {/* Logo */}
           <Link
