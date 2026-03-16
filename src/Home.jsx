@@ -1,4 +1,4 @@
-function App() {
+function Home() {
   return (
     <>
       <h2 className="text-7xl text-primary font-bold">HERO.IO APPS STORE</h2>
@@ -6,4 +6,4 @@ function App() {
   );
 }
 
-export default App;
+export default Home;
