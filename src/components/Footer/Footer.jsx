@@ -5,7 +5,7 @@ import { Link } from "react-router";
 const Footer = () => {
   return (
     <footer className="bg-[#001931]">
-      <div className="footer sm:footer-horizontal max-w-7xl mx-auto text-base-100 py-10">
+      <div className="footer sm:footer-horizontal max-w-7xl mx-auto text-base-100 py-10 px-4 lg:px-0">
         <aside>
           {/* Logo */}
           <Link
@@ -28,8 +28,8 @@ const Footer = () => {
           <h6 className="footer-title">Services</h6>
           <a className="link link-hover">Branding</a>
           <a className="link link-hover">Design</a>
+          <a className="link link-hover">Development</a>
           <a className="link link-hover">Marketing</a>
-          <a className="link link-hover">Advertisement</a>
         </nav>
         <nav>
           <h6 className="footer-title">Company</h6>
@@ -40,12 +40,11 @@ const Footer = () => {
           <h6 className="footer-title">Legal</h6>
           <a className="link link-hover">Terms of use</a>
           <a className="link link-hover">Privacy policy</a>
-          <a className="link link-hover">Cookie policy</a>
         </nav>
       </div>
 
       <aside>
-        <p className="text-center text-base-100 pb-10">
+        <p className="text-center text-base-100 pb-10 px-4 lg:px-0">
           Copyright © {new Date().getFullYear()} - All right reserved |
           Developed by{" "}
           <span className="bg-linear-to-r from-[#632EE3] to-[#9F62F2] bg-clip-text text-transparent font-bold">

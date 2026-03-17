@@ -9,7 +9,7 @@ const Header = () => {
   const navLinks = (
     <>
       <NavLink
-        to="/home"
+        to="/"
         className="text-[#00000090] inline-flex justify-center items-center gap-1 border-b-2 border-transparent hover:border-[#9F62F2] transition-all duration-300 p-2 mx-3"
       >
         <TiHomeOutline /> Home
@@ -29,8 +29,8 @@ const Header = () => {
     </>
   );
   return (
-    <header className="bg-[#ffffff] sticky top-0 z-50 shadow-md">
-      <div className="navbar max-w-7xl mx-auto">
+    <header className="bg-[#ffffff] sticky top-0 z-50 shadow-md py-2.5">
+      <div className="navbar max-w-7xl mx-auto p-0">
         <div className="navbar-start mx-4 lg:mx-0">
           {/* Logo */}
           <Link
@@ -80,18 +80,18 @@ const Header = () => {
 
             {/* Button */}
             <div className="lg:ml-4 mt-2 lg:mt-0">
-              <button className="btn bg-linear-to-r from-[#632EE3] to-[#9F62F2] px-5 py-4 rounded-lg text-white font-semibold hover:opacity-90 transition-all duration-300">
-                <FaGithub className="text-2xl mr-1" /> Contribute
-              </button>
+              <Link className="inline-flex gap-2 bg-linear-to-r from-[#632EE3] to-[#9F62F2] px-4 py-3 rounded-sm text-white font-semibold hover:opacity-90 transition-all duration-300">
+                <FaGithub className="text-2xl" /> Contribute
+              </Link>
             </div>
           </ul>
         </div>
 
         {/* Button */}
         <div className="navbar-end lg:ml-4 mt-2 lg:mt-0 hidden lg:flex">
-          <button className="btn bg-linear-to-r from-[#632EE3] to-[#9F62F2] px-5 py-4 rounded-lg text-white font-semibold hover:opacity-90 transition-all duration-300">
-            <FaGithub className="text-2xl mr-1" /> Contribute
-          </button>
+          <Link className="inline-flex gap-2 bg-linear-to-r from-[#632EE3] to-[#9F62F2] px-4 py-3 rounded-sm text-white font-semibold hover:opacity-90 transition-all duration-300">
+            <FaGithub className="text-2xl" /> Contribute
+          </Link>
         </div>
       </div>
     </header>

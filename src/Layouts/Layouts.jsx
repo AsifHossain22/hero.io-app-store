@@ -9,7 +9,7 @@ const Layouts = () => {
       {/* Header */}
       <Header />
 
-      <main className="max-w-7xl mx-auto">
+      <main>
         {/* Main */}
         <Outlet />
       </main>

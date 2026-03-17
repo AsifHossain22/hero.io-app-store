@@ -1,7 +1,14 @@
+import Banner from "./components/Banner/Banner";
+import TrendingApps from "./components/TrendingApps/TrendingApps";
+
 function Home() {
   return (
     <>
-      <h2 className="text-7xl text-primary font-bold">HERO.IO APPS STORE</h2>
+      {/* BannerSection */}
+      <Banner />
+
+      {/* TrendingAppSection */}
+      <TrendingApps />
     </>
   );
 }
