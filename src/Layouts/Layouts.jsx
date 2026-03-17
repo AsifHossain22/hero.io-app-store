@@ -1,9 +1,11 @@
 import React from "react";
 import Header from "../components/Header/Header";
 import Footer from "../components/Footer/Footer";
-import { Outlet } from "react-router";
+import { Outlet, useNavigation } from "react-router";
+import Loader from "../components/Loader/Loader";
 
 const Layouts = () => {
+  const navigation = useNavigation();
   return (
     <>
       {/* Header */}
@@ -11,7 +13,7 @@ const Layouts = () => {
 
       <main>
         {/* Main */}
-        <Outlet />
+        {navigation.state === "loading" ? <Loader /> : <Outlet />}
       </main>
 
       {/* Footer */}

@@ -35,7 +35,7 @@ const Header = () => {
           {/* Logo */}
           <Link
             to="/"
-            className="flex items-center gap-2 bg-transparent border-none shadow-none hover:scale-110 transition-transform duration-300"
+            className="flex items-center gap-2 bg-transparent border-none shadow-none hover:scale-105 transition-transform duration-300"
           >
             <img src={logo} alt="Logo" className="w-10 h-10" />
             <span className="bg-linear-to-r from-[#632EE3] to-[#9F62F2] bg-clip-text text-transparent font-bold">
@@ -80,7 +80,11 @@ const Header = () => {
 
             {/* Button */}
             <div className="lg:ml-4 mt-2 lg:mt-0">
-              <Link className="inline-flex gap-2 bg-linear-to-r from-[#632EE3] to-[#9F62F2] px-4 py-3 rounded-sm text-white font-semibold hover:opacity-90 transition-all duration-300">
+              <Link
+                to="https://github.com/AsifHossain22/hero.io-app-store"
+                target="_blank"
+                className="inline-flex gap-2 bg-linear-to-r from-[#632EE3] to-[#9F62F2] px-4 py-3 rounded-sm text-white font-semibold hover:opacity-90 transition-all duration-300"
+              >
                 <FaGithub className="text-2xl" /> Contribute
               </Link>
             </div>
@@ -89,7 +93,11 @@ const Header = () => {
 
         {/* Button */}
         <div className="navbar-end lg:ml-4 mt-2 lg:mt-0 hidden lg:flex">
-          <Link className="inline-flex gap-2 bg-linear-to-r from-[#632EE3] to-[#9F62F2] px-4 py-3 rounded-sm text-white font-semibold hover:opacity-90 transition-all duration-300">
+          <Link
+            to="https://github.com/AsifHossain22/hero.io-app-store"
+            target="_blank"
+            className="inline-flex gap-2 bg-linear-to-r from-[#632EE3] to-[#9F62F2] px-4 py-3 rounded-sm text-white font-semibold hover:opacity-90 hover:scale-105 transition-all duration-300"
+          >
             <FaGithub className="text-2xl" /> Contribute
           </Link>
         </div>

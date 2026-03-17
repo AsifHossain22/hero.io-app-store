@@ -9,7 +9,7 @@ const Banner = () => {
     <section>
       <div className="max-w-7xl mx-auto pt-7 lg:pt-20">
         {/* Content */}
-        <div className="text-center">
+        <div className="text-center mx-4 lg:mx-0">
           {/* Title */}
           <h2 className="text-4xl lg:text-7xl font-bold">
             We Build
@@ -32,7 +32,7 @@ const Banner = () => {
             <Link
               to="https://play.google.com/store/apps"
               target="_blank"
-              className="text-[#001931] text-xl font-semibold px-4 py-3 border border-[#D2D2D2] rounded-sm inline-flex gap-2.5 hover:shadow-md transition-all duration-300"
+              className="text-[#001931] text-xl font-semibold px-4 py-3 border border-[#D2D2D2] rounded-sm inline-flex gap-2.5 hover:shadow-md hover:scale-105 transition-all duration-300"
             >
               <img src={googlePlayStoreIcon} alt="Google Play Store Icon" />{" "}
               Google Play
@@ -41,7 +41,7 @@ const Banner = () => {
             <Link
               to="https://apps.apple.com/us/mac/develop"
               target="_blank"
-              className="text-[#001931] text-xl font-semibold px-4 py-3 border border-[#D2D2D2] rounded-sm inline-flex gap-2.5 hover:shadow-md transition-all duration-300"
+              className="text-[#001931] text-xl font-semibold px-4 py-3 border border-[#D2D2D2] rounded-sm inline-flex gap-2.5 hover:shadow-md hover:scale-105 transition-all duration-300"
             >
               <img src={appleStoreIcon} alt="Google Play Store Icon" /> App
               Store
