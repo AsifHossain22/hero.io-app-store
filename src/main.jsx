@@ -6,9 +6,9 @@ import Layouts from "./Layouts/Layouts.jsx";
 import Home from "./Home.jsx";
 import Apps from "./pages/Apps/Apps.jsx";
 import Loader from "./components/Loader/Loader.jsx";
-// import AppDetails from "./pages/AppDetails/AppDetails.jsx";
-import Installation from "./pages/Installation/Installation.jsx";
 import AppDetails from "./pages/AppDetails/AppDetails.jsx";
+import Installation from "./pages/Installation/Installation.jsx";
+import { Toaster } from "react-hot-toast";
 
 // ReactRouter
 const router = createBrowserRouter([
@@ -36,6 +36,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/installation",
+        loader: () => fetch("/appsData.json"),
         element: <Installation />,
       },
     ],
@@ -45,5 +46,6 @@ const router = createBrowserRouter([
 createRoot(document.getElementById("root")).render(
   <StrictMode>
     <RouterProvider router={router} />
+    <Toaster />
   </StrictMode>,
 );

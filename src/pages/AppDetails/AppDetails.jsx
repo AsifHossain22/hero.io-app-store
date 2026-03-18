@@ -4,7 +4,7 @@ import iconDownload from "../../assets/icon-downloads.png";
 import iconRating from "../../assets/icon-ratings.png";
 import iconReview from "../../assets/icon-review.png";
 import RatingChart from "../../components/RatingChart/RatingChart";
-import { useLoaderData, useParams } from "react-router";
+import { useLoaderData, useOutletContext, useParams } from "react-router";
 
 const AppDetails = () => {
   const { id } = useParams();
@@ -30,6 +30,11 @@ const AppDetails = () => {
   } = findApp;
 
   //   console.log(id, appData);
+
+  // ReactRouterOutletContext
+  const { handleInstall, installedApps } = useOutletContext();
+
+  const isInstalled = installedApps.some((app) => app.id === findApp.id);
 
   return (
     <section className="max-w-7xl mx-auto px-4 lg:px-0">
@@ -109,8 +114,12 @@ const AppDetails = () => {
 
             {/* InstallButton */}
             <div className="mt-8 lg:mt-10">
-              <button className="w-full lg:w-auto bg-[#00D39099] hover:bg-[#00D390] text-base-100 text-lg lg:text-xl font-semibold px-8 py-4 rounded-sm cursor-pointer hover:shadow-lg transition-all duration-300">
-                Install Now (<span>{size}</span> MB)
+              <button
+                onClick={() => handleInstall(findApp)}
+                disabled={isInstalled}
+                className="w-full lg:w-auto bg-[#00D39099] hover:bg-[#00D390] text-base-100 text-lg lg:text-xl font-semibold px-8 py-4 rounded-sm cursor-pointer hover:shadow-lg transition-all duration-300 disabled:cursor-not-allowed disabled:bg-gray-400 disabled:shadow-none"
+              >
+                {isInstalled ? "Installed" : `Install Now (${size})`}
               </button>
             </div>
           </div>
