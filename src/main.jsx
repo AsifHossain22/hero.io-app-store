@@ -9,13 +9,14 @@ import Loader from "./components/Loader/Loader.jsx";
 import AppDetails from "./pages/AppDetails/AppDetails.jsx";
 import Installation from "./pages/Installation/Installation.jsx";
 import { Toaster } from "react-hot-toast";
+import ErrorPage from "./pages/ErrorPage/ErrorPage.jsx";
 
 // ReactRouter
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Layouts />,
-    errorElement: <span>Error 404 Custom Page</span>,
+    errorElement: <ErrorPage />,
     hydrateFallbackElement: <Loader />,
     children: [
       {

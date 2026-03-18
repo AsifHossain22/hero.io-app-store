@@ -10,19 +10,39 @@ const Header = () => {
     <>
       <NavLink
         to="/"
-        className="text-[#00000090] inline-flex justify-center items-center gap-1 border-b-2 border-transparent hover:border-[#9F62F2] transition-all duration-300 p-2 mx-3"
+        className={({ isActive }) =>
+          `inline-flex justify-center items-center gap-1 border-b-2 transition-all duration-300 p-2 mx-3 ${
+            isActive
+              ? "text-[#632EE3] border-[#9F62F2] font-semibold"
+              : "text-[#00000090] border-transparent hover:border-[#9F62F2]"
+          }`
+        }
       >
         <TiHomeOutline /> Home
       </NavLink>
+
       <NavLink
         to="/apps"
-        className="text-[#00000090] inline-flex justify-center items-center gap-1 border-b-2 border-transparent hover:border-[#9F62F2] transition-all duration-300 p-2 mx-3"
+        className={({ isActive }) =>
+          `inline-flex justify-center items-center gap-1 border-b-2 transition-all duration-300 p-2 mx-3 ${
+            isActive
+              ? "text-[#632EE3] border-[#9F62F2] font-semibold"
+              : "text-[#00000090] border-transparent hover:border-[#9F62F2]"
+          }`
+        }
       >
         <FaAppStore /> Apps
       </NavLink>
+
       <NavLink
         to="/installation"
-        className="text-[#00000090] inline-flex justify-center items-center gap-1 border-b-2 border-transparent hover:border-[#9F62F2] transition-all duration-300 p-2 mx-3"
+        className={({ isActive }) =>
+          `inline-flex justify-center items-center gap-1 border-b-2 transition-all duration-300 p-2 mx-3 ${
+            isActive
+              ? "text-[#632EE3] border-[#9F62F2] font-semibold"
+              : "text-[#00000090] border-transparent hover:border-[#9F62F2]"
+          }`
+        }
       >
         <MdInstallDesktop /> Installation
       </NavLink>

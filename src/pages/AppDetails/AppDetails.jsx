@@ -119,7 +119,7 @@ const AppDetails = () => {
                 disabled={isInstalled}
                 className="w-full lg:w-auto bg-[#00D39099] hover:bg-[#00D390] text-base-100 text-lg lg:text-xl font-semibold px-8 py-4 rounded-sm cursor-pointer hover:shadow-lg transition-all duration-300 disabled:cursor-not-allowed disabled:bg-gray-400 disabled:shadow-none"
               >
-                {isInstalled ? "Installed" : `Install Now (${size})`}
+                {isInstalled ? "Installed" : `Install Now (${size} MB)`}
               </button>
             </div>
           </div>

@@ -67,7 +67,7 @@ const Layouts = () => {
         )}
       </main>
       {/* Footer */}
-      {!isLoading && <Footer />} // HideFooterWhileLoading
+      {!isLoading && <Footer />}
     </>
   );
 };

@@ -25,7 +25,7 @@ const Apps = () => {
           </div>
 
           {/* TotalAppsAndSearchField */}
-          <div className="flex justify-between items-center mt-10 mb-5">
+          <div className="flex flex-col md:flex-row justify-between items-center gap-5 md:gap-0 mt-10 mb-5">
             {/* TotalApps */}
             <h5 className="text-2xl text-[#001931] font-semibold">
               ({appsData.length}) Apps Found
