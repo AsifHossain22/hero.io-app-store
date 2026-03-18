@@ -8,6 +8,7 @@ import Apps from "./pages/Apps/Apps.jsx";
 import Loader from "./components/Loader/Loader.jsx";
 // import AppDetails from "./pages/AppDetails/AppDetails.jsx";
 import Installation from "./pages/Installation/Installation.jsx";
+import AppDetails from "./pages/AppDetails/AppDetails.jsx";
 
 // ReactRouter
 const router = createBrowserRouter([
@@ -24,12 +25,17 @@ const router = createBrowserRouter([
         element: <Home />,
       },
       {
-        path: "apps",
+        path: "/apps",
         loader: () => fetch("/appsData.json"),
         element: <Apps />,
       },
       {
-        path: "installation",
+        path: "/app-details/:id",
+        loader: () => fetch("/appsData.json"),
+        element: <AppDetails />,
+      },
+      {
+        path: "/installation",
         element: <Installation />,
       },
     ],

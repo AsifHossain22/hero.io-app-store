@@ -1,11 +1,36 @@
 import React from "react";
-import appImage from "../../assets/demo-app (1).webp";
+// import appImage from "../../assets/demo-app (1).webp";
 import iconDownload from "../../assets/icon-downloads.png";
 import iconRating from "../../assets/icon-ratings.png";
 import iconReview from "../../assets/icon-review.png";
 import RatingChart from "../../components/RatingChart/RatingChart";
+import { useLoaderData, useParams } from "react-router";
 
 const AppDetails = () => {
+  const { id } = useParams();
+  //   console.log(id);
+  const appId = parseInt(id);
+
+  const appData = useLoaderData();
+  //   console.log(appData);
+
+  // FindApp
+  const findApp = appData.find((app) => app.id === appId);
+  //   console.log(findApp);
+
+  const {
+    image,
+    title,
+    companyName,
+    description,
+    size,
+    reviews,
+    ratingAvg,
+    downloads,
+  } = findApp;
+
+  //   console.log(id, appData);
+
   return (
     <section className="max-w-7xl mx-auto px-4 lg:px-0">
       <div className="text-[#001931] py-10 lg:py-20">
@@ -14,7 +39,7 @@ const AppDetails = () => {
           {/* AppImage */}
           <div className="w-full max-w-87.5 mx-auto lg:mx-0">
             <img
-              src={appImage}
+              src={image}
               alt="App Image"
               className="w-full h-auto rounded-2xl shadow-sm"
             />
@@ -22,11 +47,11 @@ const AppDetails = () => {
 
           {/* AppInfoContent */}
           <div className="flex-1 text-center lg:text-left">
-            <h3 className="text-3xl lg:text-4xl font-bold mb-2">App Title</h3>
+            <h3 className="text-3xl lg:text-4xl font-bold mb-2">{title}</h3>
             <p className="border-b border-[#00193125] pb-7 text-[#627382]">
               Developed by:{" "}
               <span className="bg-linear-to-r from-[#632EE3] to-[#9F62F2] bg-clip-text text-transparent font-medium">
-                Author
+                {companyName}
               </span>
             </p>
 
@@ -43,7 +68,9 @@ const AppDetails = () => {
                   Downloads
                 </p>
                 <span className="text-3xl lg:text-[40px] font-black leading-none">
-                  8M
+                  {Intl.NumberFormat("en", {
+                    notation: "compact",
+                  }).format(downloads)}
                 </span>
               </div>
 
@@ -58,7 +85,7 @@ const AppDetails = () => {
                   Avg Ratings
                 </p>
                 <span className="text-3xl lg:text-[40px] font-black leading-none">
-                  4.9
+                  {ratingAvg}
                 </span>
               </div>
 
@@ -73,7 +100,9 @@ const AppDetails = () => {
                   Total Reviews
                 </p>
                 <span className="text-3xl lg:text-[40px] font-black leading-none">
-                  54K
+                  {Intl.NumberFormat("en", {
+                    notation: "compact",
+                  }).format(reviews)}
                 </span>
               </div>
             </div>
@@ -81,7 +110,7 @@ const AppDetails = () => {
             {/* InstallButton */}
             <div className="mt-8 lg:mt-10">
               <button className="w-full lg:w-auto bg-[#00D39099] hover:bg-[#00D390] text-base-100 text-lg lg:text-xl font-semibold px-8 py-4 rounded-sm cursor-pointer hover:shadow-lg transition-all duration-300">
-                Install Now (<span>Size</span> MB)
+                Install Now (<span>{size}</span> MB)
               </button>
             </div>
           </div>
@@ -92,7 +121,7 @@ const AppDetails = () => {
           <h3 className="text-2xl font-bold pt-8 lg:pt-12 pb-4 lg:pb-6">
             Ratings
           </h3>
-          <div className="w-full rounded-lg">
+          <div className="w-full h-75 md:h-100 block">
             <RatingChart />
           </div>
         </div>
@@ -103,23 +132,7 @@ const AppDetails = () => {
             Description
           </h3>
           <p className="text-[#627382] text-base lg:text-lg leading-relaxed">
-            This focus app takes the proven Pomodoro technique and makes it even
-            more practical for modern lifestyles. Instead of just setting a
-            timer, it builds a complete environment for deep work, minimizing
-            distractions and maximizing concentration. Users can create custom
-            work and break intervals, track how many sessions they complete each
-            day, and review detailed statistics about their focus habits over
-            time. The design is minimal and calming, reducing cognitive load so
-            you can focus entirely on the task at hand. Notifications gently let
-            you know when to pause and when to resume, helping you maintain a
-            healthy rhythm between work and rest.
-            <br />
-            <br />A unique feature of this app is the integration of task lists
-            with timers. You can assign each task to a specific Pomodoro
-            session, making your schedule more structured. The built-in
-            analytics show not only how much time you’ve worked but also which
-            tasks consumed the most energy. This allows you to reflect on your
-            efficiency and adjust your workflow accordingly.
+            {description}
           </p>
         </div>
       </div>
