@@ -6,36 +6,68 @@ import Loader from "../components/Loader/Loader";
 import toast from "react-hot-toast";
 
 const Layouts = () => {
-  // InstalledAppState
-  const [installedApps, setInstalledApps] = useState([]);
+  // InstalledAppStateAndSaveToLocalStorage
+  const [installedApps, setInstalledApps] = useState(() => {
+    const stored = localStorage.getItem("installedApps");
+    return stored ? JSON.parse(stored) : [];
+  }); // HonestlyIUsedThisFromAI
 
   // HandleInstallFunction
   const handleInstall = (app) => {
     if (!installedApps.find((item) => item.id === app.id)) {
-      setInstalledApps([...installedApps, app]);
+      // UpdatedApps
+      const updatedInstalledApps = [...installedApps, app];
+
+      // SaveAppToLocalStorage
+      localStorage.setItem(
+        "installedApps",
+        JSON.stringify(updatedInstalledApps),
+      );
+
+      setInstalledApps(updatedInstalledApps);
 
       // ShowToast
       toast.success(`${app.title} Installed Successfully!`);
     }
   };
 
+  // HandleUninstall
+  const handleUninstall = (appId) => {
+    const updatedUninstalledApps = installedApps.filter(
+      (app) => app.id !== appId,
+    );
+    setInstalledApps(updatedUninstalledApps);
+
+    // ShowToastWhileUninstallApp
+    const uninstallApp = installedApps.find((app) => app.id === appId);
+    toast.error(`${uninstallApp.title} Uninstalled!`);
+
+    // RemoveAppFromLocalStorage
+    localStorage.setItem(
+      "installedApps",
+      JSON.stringify(updatedUninstalledApps),
+    );
+  };
+
   const navigation = useNavigation();
+
+  // SetLoadingWhileNavigateDifferentRoutes
+  const isLoading = navigation.state === "loading";
+
   return (
     <>
       {/* Header */}
       <Header />
-
       <main>
         {/* Main */}
-        {navigation.state === "loading" ? (
+        {isLoading ? (
           <Loader />
         ) : (
-          <Outlet context={{ handleInstall, installedApps }} />
+          <Outlet context={{ handleInstall, installedApps, handleUninstall }} />
         )}
       </main>
-
       {/* Footer */}
-      <Footer />
+      {!isLoading && <Footer />} // HideFooterWhileLoading
     </>
   );
 };

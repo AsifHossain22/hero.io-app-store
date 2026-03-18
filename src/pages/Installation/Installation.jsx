@@ -1,13 +1,10 @@
 import React from "react";
-import { useLoaderData, useOutletContext } from "react-router";
+import { useOutletContext } from "react-router";
 import InstalledAppCard from "../../components/InstalledAppCard/InstalledAppCard";
 
 const Installation = () => {
-  const appsData = useLoaderData();
-  //   console.log(appsData);
-
-  const { installedApps } = useOutletContext();
-  //   console.log(installedApps);
+  const { installedApps, handleUninstall } = useOutletContext();
+  //   console.log(installedApps, handleUninstall);
   return (
     <section className="py-10 lg:py-20 mx-4 lg:mx-0">
       <div className="max-w-7xl mx-auto">
@@ -49,6 +46,7 @@ const Installation = () => {
             <InstalledAppCard
               key={installedApp.id}
               installedApp={installedApp}
+              handleUninstall={handleUninstall}
             />
           ))}
         </div>

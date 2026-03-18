@@ -3,7 +3,7 @@ import { FaStar } from "react-icons/fa";
 import { LuDownload } from "react-icons/lu";
 // import appImage from "../../assets/demo-app (1).webp";
 
-const InstalledAppCard = ({ installedApp }) => {
+const InstalledAppCard = ({ installedApp, handleUninstall }) => {
   //   console.log(installedApp);
 
   const { image, title, size, ratingAvg, downloads } = installedApp;
@@ -37,7 +37,10 @@ const InstalledAppCard = ({ installedApp }) => {
 
         {/* Button */}
         <div className="">
-          <button className="bg-[#00D39099] hover:bg-[#00D390] text-base-100 text-lg lg:text-xl font-semibold px-8 py-4 rounded-sm cursor-pointer hover:shadow-lg transition-all duration-300">
+          <button
+            onClick={() => handleUninstall(installedApp.id)}
+            className="bg-[#00D39099] hover:bg-[#00D390] text-base-100 text-lg lg:text-xl font-semibold px-8 py-4 rounded-sm cursor-pointer hover:shadow-lg transition-all duration-300"
+          >
             Uninstall
           </button>
         </div>
