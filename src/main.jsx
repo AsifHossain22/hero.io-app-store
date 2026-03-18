@@ -6,6 +6,8 @@ import Layouts from "./Layouts/Layouts.jsx";
 import Home from "./Home.jsx";
 import Apps from "./pages/Apps/Apps.jsx";
 import Loader from "./components/Loader/Loader.jsx";
+// import AppDetails from "./pages/AppDetails/AppDetails.jsx";
+import Installation from "./pages/Installation/Installation.jsx";
 
 // ReactRouter
 const router = createBrowserRouter([
@@ -25,6 +27,10 @@ const router = createBrowserRouter([
         path: "apps",
         loader: () => fetch("/appsData.json"),
         element: <Apps />,
+      },
+      {
+        path: "installation",
+        element: <Installation />,
       },
     ],
   },
