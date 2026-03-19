@@ -1,12 +1,12 @@
 import React from "react";
 import { Link } from "react-router";
-import errorPageImage from "../../assets/error-404.png";
+import errorAppPageImage from "../../assets/App-Error.png";
 
-const ErrorPage = () => {
+const AppNotFound = () => {
   return (
     <section className="flex flex-col justify-center items-center min-h-screen text-center px-4">
       <div>
-        <img src={errorPageImage} alt="Error Page Image" />
+        <img src={errorAppPageImage} alt="Error Page Image" />
       </div>
       <p className="text-2xl lg:text-3xl font-bold text-[#001931] mt-4 mb-2">
         Oops, page not found!
@@ -24,4 +24,4 @@ const ErrorPage = () => {
   );
 };
 
-export default ErrorPage;
+export default AppNotFound;
