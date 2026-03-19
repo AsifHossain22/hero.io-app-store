@@ -116,7 +116,7 @@ const Header = () => {
           <Link
             to="https://github.com/AsifHossain22/hero.io-app-store"
             target="_blank"
-            className="inline-flex gap-2 bg-linear-to-r from-[#632EE3] to-[#9F62F2] px-4 py-3 rounded-sm text-white font-semibold hover:opacity-90 hover:scale-105 transition-all duration-300"
+            className="inline-flex gap-2 bg-linear-to-r from-[#632EE3] to-[#9F62F2] px-4 py-3 rounded-sm text-base-100 font-semibold hover:opacity-90 hover:scale-105 transition-all duration-300"
           >
             <FaGithub className="text-2xl" /> Contribute
           </Link>

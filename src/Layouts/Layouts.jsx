@@ -8,9 +8,9 @@ import toast from "react-hot-toast";
 const Layouts = () => {
   // InstalledAppStateAndSaveToLocalStorage
   const [installedApps, setInstalledApps] = useState(() => {
-    const stored = localStorage.getItem("installedApps");
-    return stored ? JSON.parse(stored) : [];
-  }); // HonestlyIUsedThisFromAI
+    const storedApps = localStorage.getItem("installedApps");
+    return storedApps ? JSON.parse(storedApps) : [];
+  });
 
   // HandleInstallFunction
   const handleInstall = (app) => {

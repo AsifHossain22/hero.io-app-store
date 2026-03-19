@@ -1,25 +1,15 @@
 import React from "react";
-import { Link } from "react-router";
 import errorAppPageImage from "../../assets/App-Error.png";
 
 const AppNotFound = () => {
   return (
-    <section className="flex flex-col justify-center items-center min-h-screen text-center px-4">
+    <section className="flex flex-col justify-center items-center text-center px-4">
       <div>
         <img src={errorAppPageImage} alt="Error Page Image" />
       </div>
       <p className="text-2xl lg:text-3xl font-bold text-[#001931] mt-4 mb-2">
-        Oops, page not found!
+        Oops, apps not found!
       </p>
-      <p className="text-[#627382] md:text-xl mb-8">
-        The page you are looking for is not available.
-      </p>
-      <Link
-        to="/"
-        className="bg-linear-to-br from-[#632EE3] to-[#9F62F2] px-6 py-3 rounded-sm text-white font-semibold hover:opacity-90 transition-all duration-300"
-      >
-        Back to Home
-      </Link>
     </section>
   );
 };

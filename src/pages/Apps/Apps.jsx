@@ -1,12 +1,18 @@
-import React from "react";
+import React, { useState } from "react";
 import { useLoaderData } from "react-router";
 import SingleAppCard from "../../components/SingleAppCard/SingleAppCard";
+import AppNotFound from "../ErrorPage/AppNotFound";
 
 const Apps = () => {
   const appsData = useLoaderData();
   //   console.log(appsData);
 
-  // const [allApps, setAllApps] = useState([]);
+  //   SearchState
+  const [search, setSearch] = useState("");
+
+  const filteredApps = appsData.filter((app) =>
+    app.title.toLowerCase().includes(search.toLowerCase()),
+  );
   return (
     <>
       <section className="py-10 lg:py-20 mx-4 lg:mx-0">
@@ -28,7 +34,7 @@ const Apps = () => {
           <div className="flex flex-col md:flex-row justify-between items-center gap-5 md:gap-0 mt-10 mb-5">
             {/* TotalApps */}
             <h5 className="text-2xl text-[#001931] font-semibold">
-              ({appsData.length}) Apps Found
+              ({filteredApps.length}) Apps Found
             </h5>
 
             {/* SearchField */}
@@ -50,16 +56,37 @@ const Apps = () => {
                     <path d="m21 21-4.3-4.3"></path>
                   </g>
                 </svg>
-                <input type="search" className="grow" placeholder="Search" />
+                <input
+                  type="search"
+                  className="grow"
+                  placeholder="Search"
+                  value={search}
+                  onChange={(e) => setSearch(e.target.value)}
+                />
               </label>
             </div>
           </div>
 
           {/* AppsContainer */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 pb-5 lg:pb-10">
-            {appsData.map((app) => (
-              <SingleAppCard key={app.id} app={app} />
-            ))}
+            {filteredApps.length === 0 ? (
+              // ✅ ADDED: no results UI when nothing matches search
+              <div className="col-span-full flex flex-col items-center justify-center py-20 text-center gap-3">
+                <AppNotFound />
+                <p className="text-[#627382]">
+                  No results for{" "}
+                  <span className="font-semibold text-[#632EE3]">
+                    "{search}"
+                  </span>
+                  . Try a different name.
+                </p>
+              </div>
+            ) : (
+              // ✅ CHANGED: filteredApps instead of appsData
+              filteredApps.map((app) => (
+                <SingleAppCard key={app.id} app={app} />
+              ))
+            )}
           </div>
         </div>
       </section>
