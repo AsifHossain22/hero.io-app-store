@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link, useOutletContext } from "react-router";
 import InstalledAppCard from "../../components/InstalledAppCard/InstalledAppCard";
-import { MdInstallDesktop } from "react-icons/md";
+import AppNotFound from "../ErrorPage/AppNotFound";
 
 const Installation = () => {
   const { installedApps, handleUninstall } = useOutletContext();
@@ -47,10 +47,7 @@ const Installation = () => {
         <div className="pb-5 lg:pb-10 space-y-4">
           {installedApps.length === 0 ? (
             <div className="flex flex-col justify-center items-center py-20 text-center gap-4">
-              <MdInstallDesktop className="text-7xl text-[#D2D2D2]" />
-              <h3 className="text-2xl font-bold text-[#001931]">
-                No Apps Installed Yet
-              </h3>
+              <AppNotFound />
               <p className="text-[#627382]">
                 Browse our apps and install your favorites!
               </p>

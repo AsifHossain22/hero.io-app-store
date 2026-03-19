@@ -7,9 +7,6 @@ const AppNotFound = () => {
       <div>
         <img src={errorAppPageImage} alt="Error Page Image" />
       </div>
-      <p className="text-2xl lg:text-3xl font-bold text-[#001931] mt-4 mb-2">
-        Oops, apps not found!
-      </p>
     </section>
   );
 };
