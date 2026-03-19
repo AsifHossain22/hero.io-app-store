@@ -39,6 +39,7 @@ A modern app store web application where users can browse, search and install ap
 
 ## Project Structure
 
+```text
 src/
 ├── assets/               # Images and icons
 ├── components/
