@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link, useOutletContext } from "react-router";
 import InstalledAppCard from "../../components/InstalledAppCard/InstalledAppCard";
 import { MdInstallDesktop } from "react-icons/md";
@@ -6,6 +6,17 @@ import { MdInstallDesktop } from "react-icons/md";
 const Installation = () => {
   const { installedApps, handleUninstall } = useOutletContext();
   //   console.log(installedApps, handleUninstall);
+
+  //   SortedState
+  const [sortBy, setSortBy] = useState("default");
+
+  const sortedApps = [...installedApps];
+  sortedApps.sort((a, b) => {
+    if (sortBy === "high-low") return b.downloads - a.downloads;
+    if (sortBy === "low-high") return a.downloads - b.downloads;
+    return 0; // Default
+  });
+
   return (
     <section className="py-10 lg:py-20 mx-4 lg:mx-0">
       <div className="max-w-7xl mx-auto">
@@ -20,12 +31,13 @@ const Installation = () => {
             {/* SortBySelectField */}
             <div>
               <select
-                defaultValue="Pick a color"
+                value={sortBy}
+                onChange={(e) => setSortBy(e.target.value)}
                 className="select appearance-none"
               >
-                <option>Sort by</option>
-                <option>Name</option>
-                <option>Size</option>
+                <option value="default">Sort by</option>
+                <option value="high-low">High - Low</option>
+                <option value="low-high">Low - High</option>
               </select>
             </div>
           </div>
@@ -50,7 +62,7 @@ const Installation = () => {
               </Link>
             </div>
           ) : (
-            installedApps.map((installedApp) => (
+            sortedApps.map((installedApp) => (
               <InstalledAppCard
                 key={installedApp.id}
                 installedApp={installedApp}
