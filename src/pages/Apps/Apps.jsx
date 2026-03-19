@@ -70,7 +70,6 @@ const Apps = () => {
           {/* AppsContainer */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 pb-5 lg:pb-10">
             {filteredApps.length === 0 ? (
-              // ✅ ADDED: no results UI when nothing matches search
               <div className="col-span-full flex flex-col items-center justify-center py-20 text-center gap-3">
                 <AppNotFound />
                 <p className="text-[#627382]">
@@ -82,7 +81,6 @@ const Apps = () => {
                 </p>
               </div>
             ) : (
-              // ✅ CHANGED: filteredApps instead of appsData
               filteredApps.map((app) => (
                 <SingleAppCard key={app.id} app={app} />
               ))
