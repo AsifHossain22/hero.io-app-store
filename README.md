@@ -1,12 +1,61 @@
-# React + Vite
+# HERO.IO — App Store
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern app store web application where users can browse, search and install apps. Built with React and React Router, featuring live search, install/uninstall functionality with localStorage persistence and a fully responsive UI.
 
-Currently, two official plugins are available:
+**Live Demo: https://heroio-apps-store.netlify.app/**
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## Expanding the ESLint configuration
+## Features
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+* **Browse & Discover:** View all available apps complete with download counts and average ratings.
+* **Live Search:** Instantly filter apps by title as you type.
+* **Smart Sorting:** Sort your installed apps by download count (High to Low or Low to High).
+* **Interactive Installation:** Install and uninstall apps easily, accompanied by beautiful toast notifications.
+* **Data Persistence:** Installed apps are saved in your browser's `localStorage`, keeping your data safe across page refreshes.
+* **Seamless Navigation:** * Active route highlighting in the navigation bar.
+    * Route-based loading states featuring a full-height loader.
+    * A custom 404 error page catching unknown routes and invalid app IDs.
+* **Fully Responsive:** Optimized for a great experience on mobile, tablet and desktop devices.
+
+---
+
+## Technologies
+
+| Technology | Purpose |
+| :--- | :--- |
+| **React 19** | Core UI library |
+| **React Router v7** | Client-side routing, data loaders and outlet context for state sharing |
+| **Tailwind CSS v4** | Utility-first CSS framework for rapid styling |
+| **DaisyUI** | Tailwind component library for pre-built UI elements |
+| **React Hot Toast** | Elegant toast notifications for user actions |
+| **React Icons** | Comprehensive SVG icon library |
+| **Recharts** | Rendering dynamic ratings visualizations |
+| **Vite** | Blazing fast build tool and development server |
+| **localStorage** | Browser API for persisting installed app data across sessions |
+| **Netlify** | Platform for hosting and deployment |
+
+---
+
+## Project Structure
+
+src/
+├── assets/               # Images and icons
+├── components/
+│   ├── Banner/           # Hero section with stats
+│   ├── Header/           # Sticky navbar with active NavLinks
+│   ├── Footer/           # Footer
+│   ├── Loader/           # Loading spinner
+│   ├── RatingChart/      # Recharts rating visualization
+│   ├── SingleAppCard/    # App card for grid view
+│   ├── InstalledAppCard/ # App card for installation page
+│   └── TrendingApps/     # Top rated apps section
+├── Layouts/
+│   └── Layouts.jsx       # Root layout with shared state
+├── pages/
+│   ├── Apps/             # All apps with live search
+│   ├── AppDetails/       # Single app detail page
+│   ├── Installation/     # Installed apps with sort
+│   └── NotFound/         # Custom 404 page
+├── Home.jsx              # Home page
+└── main.jsx              # Router config and app entry
