@@ -14,7 +14,7 @@ const SingleAppCard = ({ app }) => {
             <img
               src={image}
               alt="App Image"
-              className="w-full h-48 rounded-lg"
+              className="w-full h-48 rounded-lg object-fill"
             />
           </div>
 
