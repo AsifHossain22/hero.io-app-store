@@ -13,7 +13,8 @@ A modern app store web application where users can browse, search and install ap
 * **Smart Sorting:** Sort your installed apps by download count (High to Low or Low to High).
 * **Interactive Installation:** Install and uninstall apps easily, accompanied by beautiful toast notifications.
 * **Data Persistence:** Installed apps are saved in your browser's `localStorage`, keeping your data safe across page refreshes.
-* **Seamless Navigation:** * Active route highlighting in the navigation bar.
+* **Seamless Navigation:**
+    * Active route highlighting in the navigation bar.
     * Route-based loading states featuring a full-height loader.
     * A custom 404 error page catching unknown routes and invalid app IDs.
 * **Fully Responsive:** Optimized for a great experience on mobile, tablet and desktop devices.
