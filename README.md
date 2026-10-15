@@ -1,4 +1,4 @@
-# HERO.IO — App Store
+# HERO.IO - App Store
 
 A modern, responsive app discovery platform where users can explore applications, view app details and manage their installed apps.
 
@@ -22,7 +22,7 @@ A modern, responsive app discovery platform where users can explore applications
 
 ## About the Project
 
-**HERO.IO — App Store** is a React-based web application designed to provide users with a convenient platform for discovering and exploring applications through an intuitive interface.
+**HERO.IO - App Store** is a React-based web application designed to provide users with a convenient platform for discovering and exploring applications through an intuitive interface.
 
 The project focuses on simplifying app discovery by presenting application information in an organized layout. Users can browse available apps, explore individual app details and interact with app installation features through a clean and responsive user interface.
 
