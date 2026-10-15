@@ -28,7 +28,7 @@ The project focuses on simplifying app discovery by presenting application infor
 
 Built with modern frontend technologies, HERO.IO demonstrates component-based development, dynamic data rendering, responsive UI design and client-side navigation.
 
-**Live Demo:** [HERO.IO — App Store](https://heroio-apps-store.netlify.app/)
+**Live Demo:** [HERO.IO - App Store](https://heroio-apps-store.netlify.app/)
 
 ---
 
